@@ -1,0 +1,12 @@
+{
+  "tag": "linux-v0.1.0-beta.2",
+  "title": "JConnect 0.1.0 Beta 2 for Linux",
+  "assets": [
+    {
+      "name": "JConnect-0.1.0-beta.2-amd64.deb",
+      "url": "https://jconnect-1dsx.onrender.com/download/JConnect-Linux.deb",
+      "sha256": "ce30bc64ad1d5803dbb97658afd2bdf7d19881de43ccfcecf94b3fd2731125e1",
+      "size": 100343508
+    }
+  ]
+}
