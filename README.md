@@ -16,6 +16,15 @@ This repository publishes JConnect's downloads. Each release keeps its files und
 
 JConnect is an early beta. The Windows and Mac builds aren't signed by Microsoft or Apple yet, so both ask you to confirm them the first time. Each release's notes say how.
 
+## Install from a package manager
+
+**Scoop (Windows):**
+
+```powershell
+scoop bucket add jconnect https://github.com/MichaelCodeToLimit/JConnect-releases
+scoop install jconnect
+```
+
 ## Check a download
 
 Every release has a `SHA256SUMS.txt`. Compare it with your download:

@@ -1,0 +1,40 @@
+{
+    "version": "0.1.0-beta.1",
+    "description": "Remote desktop for your own computers, with no IP addresses, no port forwarding and no account needed",
+    "homepage": "https://jconnect-1dsx.onrender.com",
+    "license": "Freeware",
+    "notes": "JConnect isn't code-signed yet. It installs for your user account, without admin rights.",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/MichaelCodeToLimit/JConnect-releases/releases/download/windows-v0.1.0-beta.1/JConnect-Setup-0.1.0-beta.1.exe#/dl.exe",
+            "hash": "b4b5eb13a4c984ed0fb925eed86903ad8c7bd195b09fdd7c4e0b7bce534c76e1"
+        }
+    },
+    "installer": {
+        "script": [
+            "Start-Process -FilePath \"$dir/dl.exe\" -ArgumentList '/S' -Wait",
+            "Remove-Item \"$dir/dl.exe\" -Force"
+        ]
+    },
+    "uninstaller": {
+        "script": [
+            "$uninstaller = Join-Path $env:LOCALAPPDATA 'Programs/JConnect/Uninstall JConnect.exe'",
+            "if (Test-Path $uninstaller) { Start-Process -FilePath $uninstaller -ArgumentList '/S' -Wait }"
+        ]
+    },
+    "checkver": {
+        "url": "https://api.github.com/repos/MichaelCodeToLimit/JConnect-releases/releases",
+        "jsonpath": "$[?(@.tag_name =~ /^windows-v/)].tag_name",
+        "regex": "windows-v([\\d.]+(?:-[\\w.]+)?)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/MichaelCodeToLimit/JConnect-releases/releases/download/windows-v$version/JConnect-Setup-$version.exe#/dl.exe",
+                "hash": {
+                    "url": "https://github.com/MichaelCodeToLimit/JConnect-releases/releases/download/windows-v$version/SHA256SUMS.txt"
+                }
+            }
+        }
+    }
+}
