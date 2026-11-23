@@ -18,7 +18,7 @@ JConnect is an early beta. The Windows and Mac builds aren't signed by Microsoft
 
 ## Install from a package manager
 
-**Scoop (Windows):**
+**Scoop (Windows), not tested yet:**
 
 ```powershell
 scoop bucket add jconnect https://github.com/MichaelCodeToLimit/JConnect-releases
