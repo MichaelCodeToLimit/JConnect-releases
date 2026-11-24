@@ -7,7 +7,7 @@
     <authors>Michael Davies</authors>
     <owners>MichaelCodeToLimit</owners>
     <projectUrl>https://jconnect-1dsx.onrender.com</projectUrl>
-    <iconUrl>https://jconnect-1dsx.onrender.com/assets/img/icon.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/MichaelCodeToLimit/JConnect-releases@38d5ca64f519ac931879bfe7d1aa37a3f7b08742/chocolatey/icon.png</iconUrl>
     <licenseUrl>https://jconnect-1dsx.onrender.com/privacy/</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/MichaelCodeToLimit/JConnect-releases</projectSourceUrl>
