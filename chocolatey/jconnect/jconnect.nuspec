@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>jconnect</id>
+    <version>0.1.0-beta1</version>
+    <title>JConnect</title>
+    <authors>Michael Davies</authors>
+    <owners>MichaelCodeToLimit</owners>
+    <projectUrl>https://jconnect-1dsx.onrender.com</projectUrl>
+    <iconUrl>https://jconnect-1dsx.onrender.com/assets/img/icon.png</iconUrl>
+    <licenseUrl>https://jconnect-1dsx.onrender.com/privacy/</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/MichaelCodeToLimit/JConnect-releases</projectSourceUrl>
+    <docsUrl>https://jconnect-1dsx.onrender.com/docs/</docsUrl>
+    <bugTrackerUrl>https://github.com/MichaelCodeToLimit/JConnect-releases/issues</bugTrackerUrl>
+    <releaseNotes>https://github.com/MichaelCodeToLimit/JConnect-releases/releases/tag/windows-v0.1.0-beta.1</releaseNotes>
+    <tags>remote-desktop remote-control vnc ssh rdp wake-on-lan encryption freeware</tags>
+    <summary>Remote desktop for your own computers, with no IP addresses, no port forwarding and no account needed.</summary>
+    <description>JConnect lets you control your own computers from anywhere. Computers on your network find each other, you pair them once with a six-digit code, and every session is end-to-end encrypted.
+
+There are no IP addresses to remember and no port forwarding to set up, and you don't need an account. It works with Tailscale, Twingate, ZeroTier, WireGuard and Windows VPN connections, and has its own network, JVPN. It also includes an SSH terminal, Remote Desktop (RDP) files and Wake-on-LAN.
+
+**This is an early beta.** The installer isn't code-signed yet, so Windows SmartScreen may warn about it. It installs for the current user, without administrator rights.
+
+The package downloads the installer from the JConnect releases page on GitHub and checks its SHA-256 before running it.</description>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>

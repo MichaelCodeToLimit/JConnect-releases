@@ -1,0 +1,32 @@
+# Maintainer: Michael Davies <205437504+MichaelCodeToLimit@users.noreply.github.com>
+# Not tested yet: build it in a clean Arch container with `makepkg -si` and check the paths in package().
+pkgname=jconnect-bin
+pkgver=0.1.0.beta2
+_tag=0.1.0-beta.2
+pkgrel=1
+pkgdesc='Remote desktop for your own computers, with no IP addresses, no port forwarding and no account needed'
+arch=('x86_64')
+url='https://jconnect-1dsx.onrender.com'
+license=('LicenseRef-custom')
+# Electron's usual runtime libraries.
+depends=('gtk3' 'nss' 'alsa-lib' 'libxss' 'libxtst' 'libnotify' 'xdg-utils' 'at-spi2-core' 'libsecret')
+provides=('jconnect')
+conflicts=('jconnect')
+options=('!strip')
+source=("JConnect-${_tag}-amd64.deb::https://github.com/MichaelCodeToLimit/JConnect-releases/releases/download/linux-v${_tag}/JConnect-${_tag}-amd64.deb")
+noextract=("JConnect-${_tag}-amd64.deb")
+sha256sums=('ce30bc64ad1d5803dbb97658afd2bdf7d19881de43ccfcecf94b3fd2731125e1')
+
+package() {
+  bsdtar -xf "JConnect-${_tag}-amd64.deb" data.tar.xz
+  bsdtar -xf data.tar.xz -C "${pkgdir}"
+
+  # Expose the app on the PATH. Check the install folder and binary name against the .deb's contents.
+  install -d "${pkgdir}/usr/bin"
+  ln -s /opt/JConnect/jconnect "${pkgdir}/usr/bin/jconnect"
+
+  # Electron's sandbox helper must be setuid root.
+  if [ -f "${pkgdir}/opt/JConnect/chrome-sandbox" ]; then
+    chmod 4755 "${pkgdir}/opt/JConnect/chrome-sandbox"
+  fi
+}
